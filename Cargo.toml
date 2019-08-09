@@ -12,3 +12,4 @@ exclude = [ "/.travis.yml" ]
 description = "Generate Cargo project template in Rust"
 
 [dependencies]
+getopts = "0.2"
