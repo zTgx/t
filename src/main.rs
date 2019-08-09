@@ -1,16 +1,32 @@
 extern crate getopts;
+extern crate term;
+use std::io::prelude::*;
 
 use getopts::Options;
 use std::env;
 
-static USAGE: &'static str = "Usage: t new project_name";
+// static USAGE: &'static str = "Usage: t new project_name";
 
 fn print_usage(program: &str, opts: Options) {
+    let mut term = term::stdout().unwrap();
     let brief = format!("Usage: {} FILE [options]", program);
-    print!("{}", opts.usage(&brief));
+
+    term.fg(term::color::GREEN).unwrap();
+    write!(term, "{}", brief).unwrap();
+    term.reset().unwrap();
 }
 
 fn main() {
+    // let mut t = term::stdout().unwrap();
+    //
+    // t.fg(term::color::GREEN).unwrap();
+    // write!(t, "hello, ").unwrap();
+    //
+    // t.fg(term::color::RED).unwrap();
+    // writeln!(t, "world!").unwrap();
+
+    // t.reset().unwrap();
+
     let args: Vec<String> = env::args().collect();
     let program = args[0].clone();
 

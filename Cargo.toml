@@ -13,3 +13,4 @@ description = "Generate Cargo project template in Rust"
 
 [dependencies]
 getopts = "0.2"
+term = "0.4.6"
