@@ -1,5 +1,6 @@
-# t 
-Generate Cargo project template in Rust
+# t [![Travis status](https://travis-ci.org/zTgx/t.svg?branch=master)](https://travis-ci.org/zTgx/t)
+
+Generate template Cargo project in Rust
 
 NOTE:
 `git` required.
