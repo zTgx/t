@@ -1,7 +1,8 @@
 use std::process::Command;
 use std::string::FromUtf8Error;
 use std::io::prelude::*;
-use std::fs::OpenOptions;
+use std::fs::{OpenOptions};
+use std::fs;
 
 static APACHE_LICENSE: &'static str = r#"
     Apache License
@@ -257,6 +258,18 @@ description = "Replace Me"
 [dependencies]
 "#;
 
+static YML: &'static str = r#"
+language: rust
+sudo: false
+
+rust:
+  - stable
+
+script:
+  - cargo build --verbose --all
+
+"#;
+
 pub fn new(name: &str) {
     let _output = Command::new("cargo")
                          .arg("new")
@@ -270,10 +283,17 @@ pub fn new(name: &str) {
 pub fn decorate(name: &str) {
     let path = "./".to_string() + name;
 
+    decorate_examples(&path);
     decorate_gitignore(&path);
     decorate_toml(&path);
     decorate_mit(&path);
     decorate_apache(&path);
+    decorate_yml(&path);
+}
+
+pub fn decorate_examples(path: &String) {
+    let name = path.to_owned() + "/" + "examples";
+    fs::create_dir(name).unwrap();
 }
 
 pub fn decorate_gitignore(path: &String) {
@@ -298,6 +318,11 @@ pub fn decorate_mit(path: &String) {
 pub fn decorate_apache(path: &String) {
     let name = path.to_owned() + "/" + "LICENSE-APACHE";
     create_file(&name, &APACHE_LICENSE);
+}
+
+pub fn decorate_yml(path: &String) {
+    let name = path.to_owned() + "/" + ".travis.yml";
+    create_file(&name, &YML);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////

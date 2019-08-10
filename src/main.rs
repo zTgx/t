@@ -4,7 +4,7 @@ use std::io::prelude::*;
 
 use getopts::Options;
 use std::env;
-use templateme::new;
+use templateme::{new,decorate};
 
 fn print_usage(program: &str, _opts: Options) {
     let mut term = term::stdout().unwrap();
@@ -44,6 +44,7 @@ fn main() {
     let name = &args[2];
     if matches.opt_present("n") {
         new(name);
+        decorate(name);
     } else {
         print_usage(&program, opts);
         return;
