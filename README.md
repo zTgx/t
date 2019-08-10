@@ -1,10 +1,15 @@
 # t 
 Generate Cargo project template in Rust
 
+NOTE:
+`git` required.
 
 # Usage
 ```
-t new proj_name
+git clone https://github.com/zTgx/t.git
+cd t
+cargo install --path .
+templateme --new proj_name
 ```
 Template project's src tree :  
 ```
