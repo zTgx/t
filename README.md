@@ -1,4 +1,4 @@
-# templateme [![Travis status](https://travis-ci.org/zTgx/t.svg?branch=master)](https://travis-ci.org/zTgx/t)
+# templateme [![Travis status](https://travis-ci.org/zTgx/t.svg?branch=master)](https://travis-ci.org/zTgx/t) [![crate](https://img.shields.io/crates/v/templateme.svg)](https://crates.io/crates/templateme)
 
 Generate template Cargo project in Rust
 
