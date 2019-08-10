@@ -270,6 +270,10 @@ script:
 
 "#;
 
+static README: &'static str = r#"
+README
+"#;
+
 pub fn new(name: &str) {
     let _output = Command::new("cargo")
                          .arg("new")
@@ -289,6 +293,7 @@ pub fn decorate(name: &str) {
     decorate_mit(&path);
     decorate_apache(&path);
     decorate_yml(&path);
+    decorate_readme(&path);
 }
 
 pub fn decorate_examples(path: &String) {
@@ -323,6 +328,11 @@ pub fn decorate_apache(path: &String) {
 pub fn decorate_yml(path: &String) {
     let name = path.to_owned() + "/" + ".travis.yml";
     create_file(&name, &YML);
+}
+
+pub fn decorate_readme(path: &String) {
+    let name = path.to_owned() + "/" + "README.md";
+    create_file(&name, &README);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
