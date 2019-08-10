@@ -1,4 +1,4 @@
-# t [![Travis status](https://travis-ci.org/zTgx/t.svg?branch=master)](https://travis-ci.org/zTgx/t)
+# templateme [![Travis status](https://travis-ci.org/zTgx/t.svg?branch=master)](https://travis-ci.org/zTgx/t)
 
 Generate template Cargo project in Rust
 
@@ -47,7 +47,17 @@ and in `.gitignore` includings:
 **/*.rs.bk
 Cargo.lock
 ```
+and in `.travis.yml` includings:
+```
+language: rust
+sudo: false
 
+rust:
+  - stable
+  
+script:
+  - cargo build --verbose --all  
+```
 and others includings default contents.  
 
 
