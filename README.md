@@ -8,7 +8,7 @@ NOTE:
 # Usage
 ```
 git clone https://github.com/zTgx/templateme.git
-cd t
+cd templateme
 cargo install --path .
 templateme --new proj_name
 ```
