@@ -15,7 +15,7 @@ templateme --new proj_name
 Template project's src tree :  
 ```
 ├── Cargo.toml
-├── docs
+├── .travis.yml
 ├── LICENSE-APACHE
 ├── LICENSE-MIT
 ├── README.md
@@ -54,7 +54,7 @@ sudo: false
 
 rust:
   - stable
-  
+
 script:
   - cargo build --verbose --all  
 ```
