@@ -1,4 +1,4 @@
-# templateme [![Travis status](https://travis-ci.org/zTgx/t.svg?branch=master)](https://travis-ci.org/zTgx/t) [![crate](https://img.shields.io/crates/v/templateme.svg)](https://crates.io/crates/templateme)
+# templateme [![Travis status](https://travis-ci.org/zTgx/templateme.svg?branch=master)](https://travis-ci.org/zTgx/templateme) [![crate](https://img.shields.io/crates/v/templateme.svg)](https://crates.io/crates/templateme)
 
 Generate template Cargo project in Rust
 
@@ -7,7 +7,7 @@ NOTE:
 
 # Usage
 ```
-git clone https://github.com/zTgx/t.git
+git clone https://github.com/zTgx/templateme.git
 cd t
 cargo install --path .
 templateme --new proj_name
